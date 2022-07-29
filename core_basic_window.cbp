@@ -1,15 +1,15 @@
-/*******************************
-*
-*   raylib - classico jogo: Jogo da cobrinha
-*
-*   Esse jogo foi criado usando raylib v1.3 (www.raylib.com)
-*
-********************************/
+/***************************************************************
+*                                                              *
+*   raylib - classico jogo: Jogo da cobrinha                   *
+*                                                              *
+*   Esse jogo foi criado usando raylib v1.3 (www.raylib.com)   *
+*                                                              *
+***************************************************************/
 
 #include "raylib.h"
 
 #if defined(PLATFORM_WEB)
-    #include <emscripten/emscripten.h>
+#include <emscripten/emscripten.h>
 #endif
 
 //----------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ int main(void)
 {
     // Inicialização
     //---------------------------------------------------------
-    InitWindow(screenWidth, screenHeight, "  JOGO DA COBRINHA     Desenvolvido por:     Rodrigo Secco,    Murilo Magossi,    Gustavo Batista");
+    InitWindow(screenWidth, screenHeight, "  JOGO DA COBRINHA     Desenvolvido por:   Rodrigo Secco,    Murilo Magossi,    Gustavo Batista");
 
     InitGame();
 
@@ -87,7 +87,6 @@ int main(void)
     }
     // Desinicialização
     //--------------------------------------------------------------------------------------
-             // Descarregue os dados carregados (texturas, sons, modelos...)
 
     CloseWindow();        // Fechar janela e contexto OpenGL
     //--------------------------------------------------------------------------------------
@@ -340,7 +339,7 @@ void DrawGame(void)
             for (int i = 0; i < counterTail; i++) DrawRectangleV(snake[i].position, snake[i].size, snake[i].color);
 
             // Desenhar fruta
-            DrawRectangleV(fruit.position, fruit.size, fruit.color);
+            DrawCircle(fruit.position.x+15, fruit.position.y+15, 15, fruit.color);
 
             if (pause) DrawText("GAME PAUSED \n\nPara acessar o MENU\npressione X", screenWidth/2.5 - MeasureText("GAME PAUSED", 40)/2, screenHeight/3 - 40, 60, RED);
         }
